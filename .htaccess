@@ -1,0 +1,17 @@
+
+
+# Enable URL rewriting
+RewriteEngine On
+RewriteBase /
+
+# RewriteCond %{REQUEST_FILENAME} -f
+# RewriteCond %{REQUEST_URI} (.*)
+# RewriteCond %{REQUEST_SCHEME} ^http$
+# RewriteRule .* https://www.branchenbuchdeutschland.de%1 [R=permanent]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule .* /index.php [L]
+
+php_flag register_globals off
